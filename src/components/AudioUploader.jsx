@@ -47,6 +47,7 @@ const AudioUploader = () => {
       accept="audio/mp3"
       inputContent={(files, extra) => (extra.reject ? 'WAV files only' : 'Drag your audio file')}
       styles={{
+        dropzone: {minHeight: 650, maxHeight: 1000},
         dropzoneReject: { borderColor: 'red', backgroundColor: '#DAA' },
         inputLabel: (files, extra) => (extra.reject ? { color: 'red' } : {}),
       }}
