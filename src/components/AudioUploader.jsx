@@ -1,6 +1,7 @@
 import React from 'react';
 import Dropzone from 'react-dropzone-uploader'
 import 'react-dropzone-uploader/dist/styles.css'
+import { white } from 'color-name';
 
 const AudioUploader = () => {
   const getUploadParams = ({ meta }) => {
@@ -47,7 +48,7 @@ const AudioUploader = () => {
       accept="audio/mp3"
       inputContent={(files, extra) => (extra.reject ? 'WAV files only' : 'Drag your audio file')}
       styles={{
-        dropzone: {minHeight: 650, maxHeight: 1000},
+        dropzone: {minHeight: 300, maxHeight: 400, width: 350},
         dropzoneReject: { borderColor: 'red', backgroundColor: '#DAA' },
         inputLabel: (files, extra) => (extra.reject ? { color: 'red' } : {}),
       }}
