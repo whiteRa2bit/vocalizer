@@ -6,21 +6,21 @@ import SignInPage from './components/SignInPage'
 import SamplesPage from './components/SamplesPage'
 import MyTracksPage from './components/MyTracksPage'
 import { makeStyles } from '@material-ui/core/styles';
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { HashRouter, Route, Switch, Link } from "react-router-dom";
 
 
 function App() {
   return (
       <div className="App">
-          <BrowserRouter>
+          <HashRouter basename='/'>
              <Switch>
                 <Route exact path="/" component={HomePage} /> 
-                <Route exact path="/signup" component={SignUpPage} /> 
-                <Route exact path="/login" component={SignInPage} /> 
-                <Route exact path="/samples" component={SamplesPage} />
-                <Route exact path="/mytracks" component={MyTracksPage} />
+                <Route path="/signup" component={SignUpPage} /> 
+                <Route path="/login" component={SignInPage} /> 
+                <Route path="/samples" component={SamplesPage} />
+                <Route path="/mytracks" component={MyTracksPage} />
               </Switch>  
-         </BrowserRouter>
+         </HashRouter>
       </div>
   );
 }
