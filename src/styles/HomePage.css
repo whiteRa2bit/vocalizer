@@ -1,0 +1,106 @@
+.FirstHome {
+    background: url('../images/homepage1.jpg'); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    float: left;
+    clear: none; 
+    width: 100%;
+  }
+  
+  .FirstHomePage {
+    margin-top: 150px;
+    margin-left: 80px;
+    float: left;
+    
+    text-align: left;
+    font-style: Serif;
+    color: white;
+  }
+  
+  .FirstHomePageHeader {
+    font-size: 60px;
+  }
+  
+  .FirstHomePageInfo {
+    margin-top: 10px;
+  }
+  
+  .FirstHomePageStart {
+    margin-top: 290px;
+    margin-right: 150px;
+    float: right;
+  }
+  
+  
+  .FirstHomePageButton {
+    background-color: Transparent;
+      border-radius:28px;
+      border:1px solid;
+      display:inline-block;
+      cursor:pointer;
+      color:#ffffff;
+      font-family:Arial;
+      font-size:17px;
+      padding:16px 31px;
+      text-decoration:none;
+      text-shadow:0px 1px 0px #2f6627;
+  }
+  
+  .SecondHomePage {
+    background: url('../images/homepage2.png'); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    float: left;
+    clear: none; 
+    width: 100%;
+  }
+
+  .UsersInfo {
+    color: white;
+    margin: 10% auto;
+    width: 90%;
+    overflow: hidden;
+  }
+
+  .Remix {
+    margin: 3%;
+    width: 27%;
+    float: left;
+    text-align: center;
+  }
+
+  .Sing {
+    margin: 3%;
+    width: 27%;
+    float: left;
+    text-align: center;
+  }
+
+  .Play {
+    margin: 3%;
+    width: 27%;
+    float: left;
+    text-align: center;
+  }
+
+  .UserImage {
+    opacity: 1;
+    max-width:100%;
+  }
+
+  .UsageType {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .UsageDescription {
+    margin-top: 5px;
+    font-size: 15px;
+  }
+  

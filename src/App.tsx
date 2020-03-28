@@ -1,11 +1,12 @@
 import React from 'react';
-import './App.css';
-import './index.css';
-import MainPage from './components/MainPage';
-import LoginPage from './components/LoginPage';
+import './styles/index.css';
+import HomePage from './components/HomePage';
+import SignUpPage from './components/SignUpPage';
+import SignInPage from './components/SignInPage'
+import SamplesPage from './components/SamplesPage'
+import MyTracksPage from './components/MyTracksPage'
 import { makeStyles } from '@material-ui/core/styles';
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
-
 
 
 function App() {
@@ -13,9 +14,12 @@ function App() {
       <div className="App">
           <BrowserRouter>
              <Switch>
-                <Route exact path="/" component={MainPage} /> 
-                <Route exact path="/login" component={LoginPage} /> 
-             </Switch>  
+                <Route exact path="/" component={HomePage} /> 
+                <Route exact path="/signup" component={SignUpPage} /> 
+                <Route exact path="/login" component={SignInPage} /> 
+                <Route exact path="/samples" component={SamplesPage} />
+                <Route exact path="/mytracks" component={MyTracksPage} />
+              </Switch>  
          </BrowserRouter>
       </div>
   );

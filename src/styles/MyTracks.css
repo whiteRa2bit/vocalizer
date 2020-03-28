@@ -1,0 +1,40 @@
+.player-wrapper {
+    width: 100px;
+    height: 10px;
+  }
+  .react-player {
+    padding-top: 56.25%;
+    position: relative;
+  }
+  
+  .react-player > div {
+    position: absolute;
+  }
+
+  .MyTracksPage {
+      color: white;
+      text-align: center;
+  }
+
+
+.PlayerWrapper {
+  margin-top: 2%;
+}
+ 
+.react-player {
+  margin: auto auto;
+}
+
+.AudioTitle {
+    /* float: left; */
+    margin: auto auto;
+}
+
+.Audio {
+    margin-top: 5%;
+}
+/* 
+.DrumsAudio {
+    margin: 0 auto;
+    /* width: 700px; */
+/* } */
