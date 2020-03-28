@@ -65,7 +65,7 @@ class AudioUploader extends Component {
         return asyncLocalStorage.getItem('song_id');
       }).then(function (value) {
           console.log('Value has been set to:', value);
-          window.location.href = './mytracks';
+          window.location.href = './vocalizer/#/mytracks';
       }).then( response => {
         split_tracks();
       }
