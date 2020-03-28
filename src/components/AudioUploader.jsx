@@ -19,9 +19,9 @@ const asyncLocalStorage = {
   }
 };
 
-const split_tracks = () => {
+const split_tracks = (song_id) => {
   console.log("Split tracks called")
-  fetch(`http://84.201.156.96:8000/songs/${asyncLocalStorage.getItem('song_id')}/split`, {
+  fetch(`http://84.201.156.96:8000/songs/${song_id}/split`, {
       method: 'POST',
       // mode: 'no-cors',
       headers: {
@@ -63,11 +63,24 @@ class AudioUploader extends Component {
     ).then(response => {
       asyncLocalStorage.setItem('song_id', response['data']['song']['id']).then(function () {
         return asyncLocalStorage.getItem('song_id');
-      }).then(function (value) {
-          console.log('Value has been set to:', value);
-          window.location.href = './vocalizer/#/mytracks';
+      }).then(value => {
+          console.log(value)
+          console.log("Split tracks called")
+          fetch(`http://84.201.156.96:8000/songs/${value}/split`, {
+              method: 'POST',
+              // mode: 'no-cors',
+              headers: {
+              },
+              // body: formData
+            }).then(
+              response => response.json()
+            ).then(response => {
+              console.log(response);
+              // console.log(response) localStorage.setItem('song_id', response.json()['data']['song']['id'])
+          })
       }).then( response => {
-        split_tracks();
+          console.log('Success')
+          window.location.href = './#/mytracks';
       }
       );
       // console.log(response) localStorage.setItem('song_id', response.json()['data']['song']['id'])
