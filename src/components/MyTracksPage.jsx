@@ -3,12 +3,12 @@ import { withRouter } from "react-router-dom";
 import HomePageBar from './HomePageBar'
 import ReactPlayer from 'react-player'
 
-var song_id = localStorage.getItem('song_id');
 
 
 
 function MyTracksPage() {
     // split_tracks();
+    var song_id = localStorage.getItem('song_id');
     var bass_mp3 = `http://84.201.156.96:8000/songs/${song_id}/bass.mp3`;
     var drums_mp3 = `http://84.201.156.96:8000/songs/${song_id}/drums.mp3`;
     var other_mp3 = `http://84.201.156.96:8000/songs/${song_id}/other.mp3`;

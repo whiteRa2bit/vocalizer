@@ -46,6 +46,33 @@ class AudioUploader extends Component {
     return { url, meta: { fileUrl: `${url}/${encodeURIComponent(meta.name)}` } }
   };
 
+  sleep(delay) {
+    console.log(`sleep for ${delay} milliseconds`)
+    var start = new Date().getTime();
+    while (new Date().getTime() < start + delay);
+  }
+
+  checkStatus = (song_id) => {
+    fetch(`http://84.201.156.96:8000/songs/${song_id}`, {
+      method: 'GET',
+      headers: {
+      },
+    }).then(response => {
+        this.sleep(5000)
+        return response.json();
+    }).then(response => {
+        console.log(song_id)
+        console.log(response)
+        console.log(response['data']['song'])
+        if (response['data']['song']['status'] == 'SPLIT') {
+          console.log("File was splitted")
+          window.location.href = './#/mytracks';
+        } 
+        else {
+          setTimeout(this.checkStatus(song_id), 10000);
+        }
+    });
+  };
 
   upload = (file, title) => {
     var formData = new FormData();
@@ -61,12 +88,13 @@ class AudioUploader extends Component {
     }).then(
       response => response.json()
     ).then(response => {
+      console.log(response)
       asyncLocalStorage.setItem('song_id', response['data']['song']['id']).then(function () {
         return asyncLocalStorage.getItem('song_id');
-      }).then(value => {
-          console.log(value)
+      }).then(song_id => {
+          console.log(song_id)
           console.log("Split tracks called")
-          fetch(`http://84.201.156.96:8000/songs/${value}/split`, {
+          fetch(`http://84.201.156.96:8000/songs/${song_id}/split`, {
               method: 'POST',
               // mode: 'no-cors',
               headers: {
@@ -76,13 +104,11 @@ class AudioUploader extends Component {
               response => response.json()
             ).then(response => {
               console.log(response);
-              // console.log(response) localStorage.setItem('song_id', response.json()['data']['song']['id'])
           })
-      }).then( response => {
-          console.log('Success')
-          window.location.href = './#/mytracks';
-      }
-      );
+          return song_id
+      }).then(song_id => {
+        this.checkStatus(song_id)
+      });
       // console.log(response) localStorage.setItem('song_id', response.json()['data']['song']['id'])
     })
   };
