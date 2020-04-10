@@ -1,40 +1,22 @@
-.player-wrapper {
-    width: 100px;
-    height: 10px;
-  }
-  .react-player {
-    padding-top: 56.25%;
-    position: relative;
-  }
-  
-  .react-player > div {
-    position: absolute;
-  }
-
-  .MyTracksPage {
-      color: white;
-      text-align: center;
-  }
-
-
-.PlayerWrapper {
-  margin-top: 2%;
-}
- 
-.react-player {
-  margin: auto auto;
+.MyTracksPage {
+    color: white;
+    text-align: center;
 }
 
-.AudioTitle {
-    /* float: left; */
-    margin: auto auto;
-}
-
-.Audio {
+.Player {
     margin-top: 5%;
 }
-/* 
-.DrumsAudio {
+
+.Track {
+    width: 100vh;
     margin: 0 auto;
-    /* width: 700px; */
-/* } */
+}
+
+.Waveform {
+  width: 1000px;
+}
+
+.WaveForm {
+    width: 100%;
+    margin: 0 auto;
+}
