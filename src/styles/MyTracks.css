@@ -9,6 +9,7 @@
 
 .Audio {
     width: 100hh;
+    height: 10vh;
     margin: 0 auto;
     overflow: hidden;
     display: flex
@@ -27,17 +28,18 @@
 }
 
 .AudioName {
-    margin: auto auto;
-    margin: auto;
+    /* margin: auto auto; */
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10%;
     float: left;
 }
 
 .VolumeContainer {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3vh;
+    margin-right: 10%;
+    margin-top: 10%;
     width: 60%;
-    float: left;
+    float: right;
 }
 
 .WaveForm {
@@ -47,9 +49,6 @@
     /* margin: 0 auto; */
 }
 
-#bassWave {
-    /* background-color: lightskyblue; */
-}
-#vocalWave {
-    /* background-color: purple; */
+#progressDiv {
+    margin-top: 15%;
 }
