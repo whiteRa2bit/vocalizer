@@ -7,16 +7,49 @@
     margin-top: 5%;
 }
 
-.Track {
-    width: 100vh;
+.Audio {
+    width: 100hh;
     margin: 0 auto;
+    overflow: hidden;
+    display: flex
+    
 }
 
-.Waveform {
-  width: 1000px;
+.AudioInfo {
+    /* height: 9vh; */
+    overflow: hidden;
+    float: left;
+    display: flex;
+    width: 20%;
+    margin-right: 5%;
+    /* border:1px solid white; */
+
+}
+
+.AudioName {
+    margin: auto auto;
+    margin: auto;
+    float: left;
+}
+
+.VolumeContainer {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3vh;
+    width: 60%;
+    float: left;
 }
 
 .WaveForm {
-    width: 100%;
-    margin: 0 auto;
+    width: 75%;
+    height: 10vh;
+    float: right;
+    /* margin: 0 auto; */
+}
+
+#bassWave {
+    /* background-color: lightskyblue; */
+}
+#vocalWave {
+    /* background-color: purple; */
 }
