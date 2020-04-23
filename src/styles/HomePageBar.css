@@ -4,6 +4,16 @@
     color: white;
 }
 
+.AppBarColapseLink {
+    /* font: bold 11px Arial; */
+    text-decoration: none;
+    color: black;
+}
+
+.AppBarColapseLink:hover {
+    text-decoration: underline;
+}
+
 .AppBarLink:hover {
     text-decoration: underline;
 }

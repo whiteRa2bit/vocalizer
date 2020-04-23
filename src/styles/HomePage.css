@@ -11,8 +11,8 @@
   }
   
   .FirstHomePage {
-    margin-top: 150px;
-    margin-left: 80px;
+    margin-top: 10%;
+    margin-left: 10%;
     float: left;
     
     text-align: left;
@@ -21,7 +21,7 @@
   }
   
   .FirstHomePageHeader {
-    font-size: 60px;
+    font-size: 4em;
   }
   
   .FirstHomePageInfo {
@@ -29,9 +29,38 @@
   }
   
   .FirstHomePageStart {
-    margin-top: 290px;
-    margin-right: 150px;
-    float: right;
+    /* margin-top: 290px; */
+    /* margin-right: 150px; */
+    float: left;
+    margin-top: 20%;
+    margin-left: 20%;
+  }
+  
+  @media only screen and (max-width: 910px) {
+    .FirstHomePageHeader {
+      font-size: 3em;
+    }
+    .FirstHomePageInfo {
+      font-size: 0.7em;
+    }
+  }
+
+  @media only screen and (max-width: 691px) {
+    .FirstHomePageHeader {
+      font-size: 3em;
+    }
+    .FirstHomePageInfo {
+      font-size: 0.7em;
+    }
+    .FirstHomePageStart {
+      /* margin-top: 290px; */
+      /* margin-right: 150px; */
+      float: left;
+      margin-top: 40%;
+      margin-left: 30%;
+    }
+
+
   }
   
   

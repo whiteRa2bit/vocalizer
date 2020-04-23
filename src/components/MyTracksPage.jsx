@@ -238,7 +238,7 @@ function MyTracksPage() {
                 <div className = 'Audio'>
                     <div className='AudioInfo' id='drumsInfo'>
                         <div className='AudioName'>
-                            <p> Drums </p>
+                            <p> Drum </p>
                         </div>
                         <div className='VolumeContainer'> 
                             <Grid container spacing={1} className='VolumeGridContainer'>

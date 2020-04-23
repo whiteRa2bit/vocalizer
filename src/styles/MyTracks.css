@@ -52,3 +52,53 @@
 #progressDiv {
     margin-top: 15%;
 }
+
+@media only screen and (max-width: 900px) {
+    .AudioInfo {
+        /* height: 9vh; */
+        overflow: hidden;
+        float: left;
+        display: flex;
+        width: 20%;
+        margin-right: 3%;
+        /* border:1px solid white; */
+    
+    }
+    .WaveForm {
+        width: 75%;
+        height: 10vh;
+        float: right;
+        /* margin: 0 auto; */
+    }
+    .VolumeContainer {
+        margin-right: 10%;
+        margin-top: 10%;
+        width: 50%;
+        float: right;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .AudioInfo {
+        /* height: 9vh; */
+        overflow: hidden;
+        float: left;
+        display: flex;
+        width: 40%;
+        margin-right: 3%;
+        /* border:1px solid white; */
+    
+    }
+    .WaveForm {
+        width: 45%;
+        height: 10vh;
+        float: right;
+        /* margin: 0 auto; */
+    }
+    .VolumeContainer {
+        margin-right: 10%;
+        margin-top: 10%;
+        width: 50%;
+        float: right;
+    }
+}

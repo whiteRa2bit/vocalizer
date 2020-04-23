@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import {Link} from "react-router-dom"
 import { withRouter } from "react-router-dom";
+import AppBarCollapse from "./AppBarCollapse";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -15,19 +16,11 @@ const useStyles = makeStyles(theme => ({
       marginRight: theme.spacing(2),
     },
     title: {
-      'margin-left': 70,
+      'margin-left': '0%',
       float: "left",
       'text-align': "left",
       'font-size': 20,
       flexGrow: 1,
-    },
-    paper: {
-      position: 'absolute',
-      width: 400,
-      backgroundColor: theme.palette.background.paper,
-      border: '2px solid #000',
-      boxShadow: theme.shadows[5],
-      padding: theme.spacing(2, 4, 3),
     },
 }));
 
@@ -44,16 +37,10 @@ const HomePageBar = () => {
                   Vocalizer 
                 </Link>
             </Typography>
-                <Link to='/samples' className='AppBarLink'>
-                  <Button color="inherit"> Samples </Button>
-                </Link> 
-                <Link to='/login' className='AppBarLink'> 
-                  <Button color="inherit">Login</Button>
-                </Link>
-                <Link to='/signup' className='AppBarLink'> 
-                  <Button color="inherit" className='SignUpButton'> Sign up for free</Button>
-                </Link>
+                
                 {/* <Button color="inherit" onClick={handleClick}>Login</Button> */}
+
+            <AppBarCollapse></AppBarCollapse>  
           </Toolbar>
         </AppBar>
     )
