@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/vocalizer/static/css/main.f6105f9f.chunk.css",
+    "main.js": "/vocalizer/static/js/main.a5965e56.chunk.js",
+    "main.js.map": "/vocalizer/static/js/main.a5965e56.chunk.js.map",
+    "runtime-main.js": "/vocalizer/static/js/runtime-main.55950267.js",
+    "runtime-main.js.map": "/vocalizer/static/js/runtime-main.55950267.js.map",
+    "static/css/2.c301f1a7.chunk.css": "/vocalizer/static/css/2.c301f1a7.chunk.css",
+    "static/js/2.827e9231.chunk.js": "/vocalizer/static/js/2.827e9231.chunk.js",
+    "static/js/2.827e9231.chunk.js.map": "/vocalizer/static/js/2.827e9231.chunk.js.map",
+    "index.html": "/vocalizer/index.html",
+    "precache-manifest.d481f20fdfb4a47b7570c47b611247fa.js": "/vocalizer/precache-manifest.d481f20fdfb4a47b7570c47b611247fa.js",
+    "service-worker.js": "/vocalizer/service-worker.js",
+    "static/css/2.c301f1a7.chunk.css.map": "/vocalizer/static/css/2.c301f1a7.chunk.css.map",
+    "static/css/main.f6105f9f.chunk.css.map": "/vocalizer/static/css/main.f6105f9f.chunk.css.map",
+    "static/js/2.827e9231.chunk.js.LICENSE.txt": "/vocalizer/static/js/2.827e9231.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/vocalizer/static/media/samples_background_2.d6414259.jpg",
+    "static/media/logo_transparent.png": "/vocalizer/static/media/logo_transparent.83fd560f.png",
+    "static/media/play.jpg": "/vocalizer/static/media/play.af15e6cd.jpg",
+    "static/media/remix.jpg": "/vocalizer/static/media/remix.b72bebcb.jpg",
+    "static/media/sing.jpg": "/vocalizer/static/media/sing.2efbd999.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.55950267.js",
+    "static/css/2.c301f1a7.chunk.css",
+    "static/js/2.827e9231.chunk.js",
+    "static/css/main.f6105f9f.chunk.css",
+    "static/js/main.a5965e56.chunk.js"
+  ]
+}
