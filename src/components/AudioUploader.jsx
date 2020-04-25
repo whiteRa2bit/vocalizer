@@ -3,6 +3,8 @@ import Dropzone from 'react-dropzone-uploader'
 import 'react-dropzone-uploader/dist/styles.css'
 import { withRouter } from "react-router-dom";
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { red } from '@material-ui/core/colors';
+import { black } from 'color-name';
 
 
 
@@ -135,11 +137,12 @@ class AudioUploader extends Component {
               onSubmit={this.handleSubmit}
               accept="audio/mp3"
               maxFiles={1}
-              inputContent={(files, extra) => (extra.reject ? 'WAV files only' : 'Drag your audio file')}
+              inputContent={(files, extra) => (extra.reject ? 'Mp3 files only' : 'Drag your audio or click')}
               styles={{
-                dropzone: {minHeight: 300, maxHeight: 400, width: 350},
+                dropzone: {minHeight: 200, maxHeight: 400, width: '100%', overflow: 'visible', opacity: 0.9},
                 dropzoneReject: { borderColor: 'red', backgroundColor: '#DAA' },
-                inputLabel: (files, extra) => (extra.reject ? { color: 'red' } : {}),
+                inputLabel: (files, extra) => (extra.reject ? { color: 'red' } : {color: 'black', fontFamily: 'Monaco'}),
+                previewImage: {}
               }}
             />
         </div>

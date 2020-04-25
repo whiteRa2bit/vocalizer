@@ -23,10 +23,14 @@ const useStyles = makeStyles(theme => ({
   paper: {
     position: 'absolute',
     width: 400,
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    backgroundColor: 'white',
+    backgroundImage: "url('../images/band.jpg')",
+    color: 'black',
+    // border: '10px solid #000',
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    padding: theme.spacing(1, 1, 1),
+    borderRadius: 4,
+    // opacity: 0.95
   },
 }));
 
@@ -65,15 +69,15 @@ const HomePage = () => {
           </div>
           <div className='FirstHomePageStart'>
             <button className='FirstHomePageButton' onClick={handleOpen}>Try it now</button>
-            <Modal
+            <Modal disableAutoFocus disableEnforceFocus
                 aria-labelledby="simple-modal-title"
                 aria-describedby="simple-modal-description"
                 open={open}
                 onClose={handleClose}
               >
                 <div style={modalStyle} className={classes.paper}>
-                  <h2 id="simple-modal-title">Upload your audio</h2>
                   <AudioUploader />
+                  {/* <h2 id="simple-modal-title">Upload your audio</h2> */}
                 </div>
               </Modal>
           </div>

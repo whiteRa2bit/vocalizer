@@ -64,18 +64,42 @@
   }
   
   
+  /* .FirstHomePageButton {
+    background-color: Transparent;
+    border-radius:28px;
+    border:1px solid;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:17px;
+    padding:16px 31px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px black;
+    /* opacity: 0.9; */
+  /* } */
+
   .FirstHomePageButton {
     background-color: Transparent;
-      border-radius:28px;
-      border:1px solid;
-      display:inline-block;
-      cursor:pointer;
-      color:#ffffff;
-      font-family:Arial;
-      font-size:17px;
-      padding:16px 31px;
-      text-decoration:none;
-      text-shadow:0px 1px 0px #2f6627;
+    border-radius: 28px;
+    border: 1px solid;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    color:#ffffff;
+    padding: 20px;
+    margin-left:5px;
+    transition: all 0.4s ease 0s;
+  }
+  .FirstHomePageButton:hover {
+    background:grey;
+    margin-left: 0px;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
   }
   
   .SecondHomePage {
@@ -133,3 +157,11 @@
     font-size: 15px;
   }
   
+  /* .UploadModal {
+    position: 'absolute';
+    width: 400;
+    background-color: 'white';
+    border-radius: 10;
+    /* background-image: "url('../images/band.jpg')"; */
+    /* color: 'black'; */
+  /* } */

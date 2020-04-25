@@ -5,7 +5,6 @@ import SignUpPage from './components/SignUpPage';
 import SignInPage from './components/SignInPage'
 import SamplesPage from './components/SamplesPage'
 import MyTracksPage from './components/MyTracksPage'
-import { makeStyles } from '@material-ui/core/styles';
 import { HashRouter, Route, Switch, Link } from "react-router-dom";
 
 
