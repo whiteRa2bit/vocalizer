@@ -68,7 +68,7 @@ class AudioUploader extends Component {
         console.log(response['data']['song'])
         if (response['data']['song']['status'] == 'SPLIT') {
           console.log("File was splitted")
-          window.location.href = './#/mytracks';
+          window.location.href = './mytracks';
         } 
         else {
           setTimeout(this.checkStatus(song_id), 10000);

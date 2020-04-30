@@ -5,21 +5,21 @@ import SignUpPage from './components/SignUpPage';
 import SignInPage from './components/SignInPage'
 import SamplesPage from './components/SamplesPage'
 import MyTracksPage from './components/MyTracksPage'
-import { HashRouter, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 
 
 function App() {
   return (
       <div className="App">
-          <HashRouter basename='/'>
+          <BrowserRouter basename='/vocalizer'>
              <Switch>
                 <Route exact path="/" component={HomePage} /> 
-                <Route path="/signup" component={SignUpPage} /> 
-                <Route path="/login" component={SignInPage} /> 
-                <Route path="/samples" component={SamplesPage} />
-                <Route path="/mytracks" component={MyTracksPage} />
+                <Route exact path="/signup" component={SignUpPage} /> 
+                <Route exact path="/login" component={SignInPage} /> 
+                <Route exact path="/samples" component={SamplesPage} />
+                <Route exact path="/mytracks" component={MyTracksPage} />
               </Switch>  
-         </HashRouter>
+         </BrowserRouter>
       </div>
   );
 }
