@@ -11,7 +11,7 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 function App() {
   return (
       <div className="App">
-          <BrowserRouter basename='/vocalizer'>
+          <BrowserRouter basename='/'>
              <Switch>
                 <Route exact path="/" component={HomePage} /> 
                 <Route exact path="/signup" component={SignUpPage} /> 

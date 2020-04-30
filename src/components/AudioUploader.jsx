@@ -55,7 +55,7 @@ class AudioUploader extends Component {
   }
 
   checkStatus = (song_id) => {
-    fetch(`http://84.201.156.96:8000/songs/${song_id}`, {
+    fetch(`https://97442fa2.ngrok.io/songs/${song_id}`, {
       method: 'GET',
       headers: {
       },
@@ -81,7 +81,7 @@ class AudioUploader extends Component {
     formData.append("title", title);
     formData.append("file", file)
 
-    fetch('http://84.201.156.96:8000/songs/upload', {
+    fetch('https://97442fa2.ngrok.io/songs/upload', {
       method: 'POST',
       // mode: 'no-cors',
       headers: {
@@ -96,7 +96,7 @@ class AudioUploader extends Component {
       }).then(song_id => {
           console.log(song_id)
           console.log("Split tracks called")
-          fetch(`http://84.201.156.96:8000/songs/${song_id}/split`, {
+          fetch(`https://97442fa2.ngrok.io/songs/${song_id}/split`, {
               method: 'POST',
               // mode: 'no-cors',
               headers: {
