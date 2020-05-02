@@ -136,7 +136,7 @@ class AudioUploader extends Component {
               getUploadParams={this.getUploadParams}
               onChangeStatus={this.handleChangeStatus}
               onSubmit={this.handleSubmit}
-              accept="audio/mp3"
+              accept="audio/*"
               maxFiles={1}
               inputContent={(files, extra) => (extra.reject ? 'Mp3 files only' : 'Drag your audio or click')}
               styles={{
