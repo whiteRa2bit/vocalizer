@@ -7,6 +7,7 @@ import { red } from '@material-ui/core/colors';
 import { black } from 'color-name';
 
 
+var server_url = 'http://8a3d3cd5.ngrok.io'
 
 const asyncLocalStorage = {
   setItem: function (key, value) {
@@ -23,7 +24,7 @@ const asyncLocalStorage = {
 
 const split_tracks = (song_id) => {
   console.log("Split tracks called")
-  fetch(`https://8ea71642.ngrok.io/songs/${song_id}/split`, {
+  fetch(`${server_url}/songs/${song_id}/split`, {
       method: 'POST',
       // mode: 'no-cors',
       headers: {
@@ -55,7 +56,7 @@ class AudioUploader extends Component {
   }
 
   checkStatus = (song_id) => {
-    fetch(`https://8ea71642.ngrok.io/songs/${song_id}`, {
+    fetch(`${server_url}/songs/${song_id}`, {
       method: 'GET',
       headers: {
       },
@@ -81,7 +82,7 @@ class AudioUploader extends Component {
     formData.append("title", title);
     formData.append("file", file)
 
-    fetch('https://8ea71642.ngrok.io/songs/upload', {
+    fetch(`${server_url}/songs/upload`, {
       method: 'POST',
       // mode: 'no-cors',
       headers: {
@@ -96,7 +97,7 @@ class AudioUploader extends Component {
       }).then(song_id => {
           console.log(song_id)
           console.log("Split tracks called")
-          fetch(`https://8ea71642.ngrok.io/songs/${song_id}/split`, {
+          fetch(`${server_url}/songs/${song_id}/split`, {
               method: 'POST',
               // mode: 'no-cors',
               headers: {

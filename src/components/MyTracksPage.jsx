@@ -19,10 +19,11 @@ import { inc } from "semver";
 function MyTracksPage() {
     // split_tracks();
     var song_id = localStorage.getItem('song_id');
-    const [bass_mp3, setBass] = React.useState(`https://8ea71642.ngrok.io/songs/${song_id}/bass.mp3`);
-    var drums_mp3 = `https://8ea71642.ngrok.io/songs/${song_id}/drums.mp3`;
-    var other_mp3 = `https://8ea71642.ngrok.io/songs/${song_id}/other.mp3`;
-    var vocals_mp3 = `https://8ea71642.ngrok.io/songs/${song_id}/vocals.mp3`;
+    var server_url = 'http://8a3d3cd5.ngrok.io'
+    const [bass_mp3, setBass] = React.useState(`${server_url}/songs/${song_id}/bass.mp3`);
+    var drums_mp3 = `${server_url}/${song_id}/drums.mp3`;
+    var other_mp3 = `${server_url}/${song_id}/other.mp3`;
+    var vocals_mp3 = `${server_url}/${song_id}/vocals.mp3`;
 
     const [is_played, setIsPlayed] = React.useState(false);    
     const [isRendered, setIsRendered] = React.useState(false);
