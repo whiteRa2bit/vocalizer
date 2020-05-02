@@ -19,7 +19,7 @@ import { inc } from "semver";
 function MyTracksPage() {
     // split_tracks();
     var song_id = localStorage.getItem('song_id');
-    var server_url = 'http://8a3d3cd5.ngrok.io'
+    var server_url = 'https://8a3d3cd5.ngrok.io'
     const [bass_mp3, setBass] = React.useState(`${server_url}/songs/${song_id}/bass.mp3`);
     var drums_mp3 = `${server_url}/${song_id}/drums.mp3`;
     var other_mp3 = `${server_url}/${song_id}/other.mp3`;

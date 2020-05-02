@@ -7,7 +7,7 @@ import { red } from '@material-ui/core/colors';
 import { black } from 'color-name';
 
 
-var server_url = 'http://8a3d3cd5.ngrok.io'
+var server_url = 'https://8a3d3cd5.ngrok.io'
 
 const asyncLocalStorage = {
   setItem: function (key, value) {
