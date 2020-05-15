@@ -7,7 +7,7 @@ import { red } from '@material-ui/core/colors';
 import { black } from 'color-name';
 
 
-var server_url = 'https://8a3d3cd5.ngrok.io'
+var server_url = 'https://api.songsplitter.com/'
 
 const asyncLocalStorage = {
   setItem: function (key, value) {
@@ -138,7 +138,7 @@ class AudioUploader extends Component {
               onSubmit={this.handleSubmit}
               accept="audio/*"
               maxFiles={1}
-              inputContent={(files, extra) => (extra.reject ? 'Mp3 files only' : 'Drag your audio or click')}
+              inputContent={(files, extra) => (extra.reject ? 'Wrong audio file type' : 'Drag your audio or click')}
               styles={{
                 dropzone: {minHeight: 200, maxHeight: 400, width: '100%', overflow: 'visible', opacity: 0.9},
                 dropzoneReject: { borderColor: 'red', backgroundColor: '#DAA' },

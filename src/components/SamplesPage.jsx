@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
 import HomePageBar from './HomePageBar'
+import MyTracksPage from './MyTracksPage'
+import AudioPlayer from './AudioPlayer';
 
 function SamplesPage() {
     return (
@@ -20,7 +22,7 @@ function SamplesPage() {
                 </div>
             </div>
             <div className='SecondPage'>
-
+                <AudioPlayer is_example={true}></AudioPlayer>
             </div>
         </div>
     )
