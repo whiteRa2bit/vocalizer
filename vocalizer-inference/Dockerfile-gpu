@@ -1,0 +1,15 @@
+FROM tensorflow/tensorflow:1.14.0-gpu-py3
+
+RUN apt-get update && apt-get install -y ffmpeg libsndfile1
+RUN pip install spleeter-gpu==1.4.9
+RUN pip install pika
+RUN pip install requests
+
+ENV MODEL_PATH /model
+RUN mkdir -p /model/4stems
+RUN curl -L https://github.com/deezer/spleeter/releases/download/v1.4.0/4stems.tar.gz | tar zx -C /model/4stems
+
+COPY . /app
+WORKDIR /app
+EXPOSE 5000
+ENTRYPOINT ["python", "worker.py"]
