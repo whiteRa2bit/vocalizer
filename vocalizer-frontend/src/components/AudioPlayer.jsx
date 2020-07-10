@@ -15,7 +15,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 function AudioPlayer({is_example}=true) {
     if (is_example) {
-        var song_id = 10;
+        var song_id = 1;
     } else {
         var song_id = localStorage.getItem('song_id');
     }
