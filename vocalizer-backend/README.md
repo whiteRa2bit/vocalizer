@@ -42,8 +42,6 @@ docker run --env CUDA_VISIBLE_DEVICES=X --env BROKER_ADDR=84.201.156.96:5672 --e
 
 Работать с песнями можно анонимно, а можно в рамках пользовательской сессии. Песни, загруженные анонимными пользователями, доступны всем, а загруженные залогиненными пользователями --- только инициатору загрузки. (Исключение: пока что нет аутентификации инференс-воркеров, поэтому эндпоинт `upload_result` доступен всем.)
 
-Сейчас сервер запущен на [84.201.156.96:8000](http://84.201.156.96:8000/).
-
 Эндпоинты:
 * `POST /auth/register` --- зарегистрировать нового пользователя и залогиниться. Принимает поля `username`, `password1` и `password2`.
 * `POST /auth/login` --- залогиниться. Принимает поля `username` и `password`.
@@ -59,17 +57,57 @@ docker run --env CUDA_VISIBLE_DEVICES=X --env BROKER_ADDR=84.201.156.96:5672 --e
 
 Запуск:
 
+Следуйте туториалу https://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html
+
+Должен получится следующий конфиг для nginx:
+
 ```
-cd vocalizer-backend
-docker build -t backend .
-docker run -p 443:443 --env BROKER_ADDR=84.201.156.96:5672 -v backend-data:/data -v /home/artliss/vocalizer-certs:/ssl backend
+# vocalizer_nginx.conf
+# the upstream component nginx needs to connect to
+upstream django { 
+   # server unix:///path/to/your/mysite/mysite.sock; # for a file socket
+    server unix://home/pfakanov/vocalizer/vocalizer-backend/vocalizer.sock; # for a web port socket (we'll use this first)
+}
+
+# configuration of the server
+server {
+    # the port your site will be served on
+    listen      8000;
+    # the domain name it will serve for
+    server_name api.songsplitter.com www.api.songsplitter.com; # substitute your machine's IP address or FQDN
+    charset     utf-8;
+
+    # max upload size
+    client_max_body_size 75M;   # adjust to taste
+
+    # Django media
+    location /media  {
+        alias /home/pfakanov/vocalizer/vocalizer-backend/vocalizer/media;  # your Django project's media files - amend as required
+    }
+
+    location /static {
+        alias /home/pfakanov/vocalizer/vocalizer-backend/static; # your Django project's static files - amend as required
+    }
+
+    # Finally, send all non-media requests to the Django server.
+    location / {
+        uwsgi_pass  django;
+        include     /home/pfakanov/vocalizer/vocalizer-backend/uwsgi_params; # the uwsgi_params file you installed
+    }
+
+}
 ```
 
-Если запуск производится в первый раз, то нужно ещё применить миграции с помощью второй команды из раздела "Миграции" ниже.
+Инструкция, как настроить сертификаты:
+https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04
 
-После запуска сервер будет доступен на порту `443`. Данные (песни и результат их обработки) хранятся в отдельном docker volume, путь к которому в файловой системе можно узнать с помощью команды `docker volume inspect backend-data`.
 
-Сервер ожидает, что в папке /ssl будут находиться файлы `cert.pem` и `key.pem` --- TLS-сертификат и приватный ключ от него. Если их нет, то должен автоматически сгенерироваться самоподписанный сертификат. Если хочется использовать свой сертификат, стоит заменить путь `/home/artliss/vocalizer-certs` в команде запуска.
+Если все было сделано правильно, то после выполнения команды в папке с проектом сервер запуститься:
+```
+uwsgi --socket vocalizer.sock --module vocalizer.wsgi --chmod-socket=666
+```
+
+После запуска сервер будет доступен на порту `443`. Данные (песни и результат их обработки) хранятся в папке data
 
 ##### Миграции
 
